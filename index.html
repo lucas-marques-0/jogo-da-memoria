@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <title>jogo da velha</title>
+</head>
+<body>
+    <h1>JOGO DA MEMÓRIA</h1>
+    <div id="jogo">
+        <div id="tabuleiro">
+            <!--
+    
+            EXEMPLO DE COMO QUEREMOS QUE O JAVASCRIPT CRIE CADA CARTA ABAIXO...
+    
+            <div id="x" class="pesonagem" data-icone="steve">
+                <div class="carta_frente">
+                    <img id="icone" src="./icones/steve.png">
+                </div>
+                <div class="carta_verso">
+                    &lt/&gt
+                </div>
+            </div>
+    
+            -->
+        </div>
+        
+        <audio id="musica">
+            <source src="./icones/musica_de_fundo.mp3" type="audio/mp3">
+        </audio>
+        <div class="barra_progresso">
+            <div class="avanco"></div>
+            <p class="inicio">0:00</p>
+            <p class="fim">1:00</p>
+        </div>
+    </div>
+
+    <div id="tela_inicio">
+        <img id="demogorgon" src="./icones/demogorgon_telaFinal.png">
+        <p id="texto_inicio">Você tem 1 minuto para resolver o jogo da memória...<br>ou você e seus amigos serão pegos pelo demogorgon...</p>
+        <button id="botao_iniciar" onclick="removerTelaInicio()">INICIAR JOGO</button>
+    </div>
+
+    <div id="gameOver">
+        <div id="info_principal">Ufa, foi por pouco!</div>
+        <div class="infos" id="infos_ganhador">
+            <!--<div class="infos">Você errou X vezes até se salvar</div>
+            <div class="infos">Faltava X até o demogorgon te pegar</div>-->
+        </div>
+        <button id="restart" onclick="restart()">REINICIAR JOGO</button>
+    </div>
+
+    <div id="gameOver_perdedor">
+        <div id="info_principal2">Você falhou! o demogorgon te pegou!</div>
+        <div class="infos" id="infos_perdedor">
+            <!--<div class="infos">Faltaram X personagens para descobrir</div>-->
+        </div>
+        <button id="restart2" onclick="restart2()">TENTAR NOVAMENTE</button>
+    </div>
+
+
+    <script src="./script.js"></script>
+
+    <footer>Developed by Lucas Marques in 2022</footer>
+</body>
+</html>

@@ -1,0 +1,412 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    margin-bottom: 20px;
+    color: #B76116;
+    background-color: #1A4B30;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    border: 3px solid wheat;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+    text-shadow: 2px 2px 2px black;
+}
+
+body{
+    font-family: 'Righteous', sans-serif;
+    background-color: #c7cdd3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 31px);
+    flex-direction: column;
+    background-image: url("https://cdna.artstation.com/p/assets/images/images/023/623/038/large/guadalupe-hermoso-highresscreenshot00026.jpg?1579802105&dl=1");
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.carta{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.carta_frente, .carta_verso{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.icone{
+    width: 80%;
+    border-radius:10px;
+}
+
+.icone_carta{
+    position: relative;
+    width: 85%;
+    margin-top: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.virar{
+    transform: rotateY(180Deg);
+}
+
+.carta_frente{
+    transform: rotateY(180Deg);
+    background-color: #1A4B30;
+}
+
+.carta_verso{
+    background-color: #B76116;
+    font-size: 30px;
+    color: #101c2c;
+}
+
+#tela_inicio{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    height: calc(100vh - 25px);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #1A4B30;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+#demogorgon{
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+    width: 575px;
+}
+
+#texto_inicio{
+    position: absolute;
+    left: 0;
+    background-color: #1A4B30;
+    overflow: auto;
+    color: #B76116;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 46px;
+    align-items: center;
+    text-align: center;
+    margin-left: 100px;
+    margin-bottom: 230px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+}
+
+#botao_iniciar{
+    position: absolute;
+    top: 130px;
+    right: 50%;
+    padding: 20px;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 350px;
+    width: 380px;
+    height: 100px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+}
+
+#gameOver{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    height: calc(100vh - 25px);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #1A4B30;
+    font-size: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+}
+
+#info_principal{
+    -webkit-text-stroke: 1px red;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+}
+
+.infos{
+    text-align: center;
+    font-size: 20px;
+    color: #B76116;
+}
+
+#restart{
+    padding: 20px;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+}
+
+footer{
+    font-family: 'Courier New', Courier, monospace;
+    position: fixed;
+    bottom: 0;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(27, 27, 27);
+    padding: 5px;
+}
+
+#jogo{
+    display: grid;
+    grid-template: 1fr / 70px 1fr;
+}
+
+#tabuleiro{
+    max-width: 700px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    order: 2;
+    margin-left: 30px;
+}
+
+.barra_progresso{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    height: 100%;
+    background-color:#1A4B30;
+    border-radius: 10px;
+    color: white;
+    border: 3px solid wheat;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.inicio{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    width: 70%;
+    background-color: #B76116;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid wheat;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+}
+
+.fim{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    width: 70%;
+    background-color: #B76116;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid wheat;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+}
+
+.avanco{
+    border-radius: 5px;
+    width: 70%;
+    height: 0%;
+    background-color: red;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+}
+
+#gameOver_perdedor{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    height: calc(100vh - 25px);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #1A4B30;
+    font-size: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+}
+
+#info_principal2{
+    -webkit-text-stroke: 1px red;
+}
+
+#restart2{
+    padding: 20px;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* desktop pequeno */
+@media screen and (max-width: 1700px){
+    #texto_inicio{
+        font-size: 37px;
+        margin-left: 100px;
+    }
+}
+
+/* laptop */
+@media screen and (max-width: 1440px){
+    .carta{
+        width: 120px;
+        height: 120px;
+    }
+
+    #demogorgon{
+        width: 480px;
+    }
+    
+    #texto_inicio{
+        font-size: 30px;
+        margin-left: 100px;
+    }
+    
+    #botao_iniciar{
+        position: absolute;
+        top: 20px;
+        right: 50%;
+    }
+}
+
+/* ipad */
+@media screen and (max-width: 1024px){
+    .carta{
+        width: 110px;
+        height: 110px;
+    }
+
+    #demogorgon{
+        width: 450px;
+        right: 30px;
+    }
+    
+    #texto_inicio{
+        font-size: 21px;
+        margin-left: 30px;
+    }
+    
+    #botao_iniciar{
+        width: 240px;
+        height: 80px;
+        top: -10px;
+        left: 200px;
+    }  
+}
+
+/* celular */
+@media screen and (max-width: 620px){
+    .carta{
+        width: 70px;
+        height: 70px;
+    }
+
+    .icone{
+        width: 55px;
+    }
+
+    #gameOver{
+        font-size: 25px;
+    }
+
+    #tabuleiro{
+        gap: 10px;
+        margin-right: 20px;
+        margin-left: 10px;
+    }
+
+    .barra_progresso{
+        margin-left: 20px;
+        width: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .avanco{
+        width: 80%;
+    }
+    
+    .inicio{
+        width: 90%;
+        font-size: 15px;
+    }
+    
+    .fim{
+        width: 90%;
+        font-size: 15px;
+    }
+
+    #texto_inicio{
+        height: 135px;
+        padding: 10px;
+        font-size: 23px;
+        top: 30px;
+        right: 0px;
+        width: 80%;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    
+    #botao_iniciar{
+        padding: 0px;
+        top: -170px;
+        left: 90px;
+        height: 50px;  
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    #demogorgon{
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%);
+        height: calc(100% - 250px);
+    }
+
+    #info_principal1{
+        text-align: center;
+        font-size: 35px;
+    }
+
+    #info_principal2{
+        text-align: center;
+        font-size: 35px;
+    }
+}
